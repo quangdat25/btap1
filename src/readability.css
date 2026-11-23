@@ -1,0 +1,253 @@
+/* Keep task controls readable even when the layout gets compact. */
+.sidebar nav > a,
+.settings-link,
+.btn,
+.field,
+.field input,
+.field select,
+.search-box > input,
+.topic-tabs button,
+.filter-chip,
+.text-link,
+.admin-tabs > button,
+.set-card-link,
+.stat-top > span:first-child {
+  font-size: 0.875rem;
+}
+.page-heading p,
+.welcome-banner p,
+.set-card-body > p,
+.word-meaning p,
+.review-prompt p,
+.review-banner p,
+.auth-content > p:not(.auth-switch),
+.auth-art-side > p,
+.profile-form > p {
+  font-size: 0.875rem;
+  color: #71806c;
+}
+.word-meaning > strong,
+.answer-option,
+.typing-answer,
+.flashcard-example p {
+  font-size: 1rem;
+}
+.word-main > span,
+.set-meta,
+.stat-card > p,
+.chart-legend,
+.chart-column > span,
+.sidebar-note p,
+.word-of-day p,
+.set-card-progress,
+.data-note {
+  color: #71806c;
+}
+.field input,
+.field select,
+.field textarea {
+  font-size: 1rem;
+}
+.icon-btn,
+.audio-btn {
+  min-height: 44px;
+  min-width: 44px;
+}
+.word-title .audio-btn {
+  min-height: 36px;
+  min-width: 36px;
+}
+.sidebar nav > a {
+  min-height: 48px;
+}
+.stat-card > p {
+  line-height: 1.8;
+}
+.set-card-body > p {
+  min-height: 50px;
+}
+.welcome-banner > div {
+  max-width: 64%;
+  flex-shrink: 1;
+}
+.welcome-banner .btn {
+  white-space: normal;
+}
+.auth-form input {
+  font-size: 1rem;
+}
+.auth-form .field,
+.auth-switch,
+.auth-switch .text-link {
+  font-size: 0.875rem;
+}
+.auth-art-side > p {
+  color: #73896a;
+}
+.daily-goal > p {
+  font-size: 0.8125rem;
+  max-width: 230px;
+  color: #71806c;
+}
+.sidebar-profile strong,
+.sidebar-profile small {
+  font-size: 0.8125rem;
+}
+.sidebar-note strong {
+  font-size: 0.875rem;
+}
+.set-meta {
+  flex-wrap: wrap;
+  gap: 7px 12px;
+}
+.history-filters .field,
+.report-filters .field {
+  min-width: 165px;
+}
+@media (max-width: 1050px) {
+  .welcome-banner > .learning-art {
+    opacity: 0.25;
+  }
+  .welcome-banner > div {
+    max-width: 100%;
+  }
+  .welcome-banner p {
+    max-width: 330px;
+  }
+  .sidebar nav > a {
+    padding-left: 10px;
+    padding-right: 10px;
+    gap: 9px;
+  }
+  .set-card-link {
+    font-size: 0.8125rem;
+  }
+}
+@media (max-width: 800px) {
+  .welcome-banner > .learning-art {
+    opacity: 0.15;
+  }
+  .page-heading p,
+  .set-card-body > p,
+  .word-meaning p {
+    font-size: 0.875rem;
+  }
+  .history-filters .field,
+  .report-filters .field {
+    min-width: calc(50% - 10px);
+  }
+}
+@media (max-width: 680px) {
+  .daily-goal {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 3px 17px;
+    padding: 18px;
+    align-items: center;
+  }
+  .daily-goal .section-line {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .daily-goal .section-line h3 {
+    font-size: 0.875rem;
+  }
+  .daily-goal .goal-circle {
+    grid-column: 1;
+    grid-row: 1 / 4;
+    width: 100px;
+    height: 100px;
+    margin: 0;
+    padding: 6px;
+  }
+  .daily-goal > p {
+    grid-column: 2;
+    grid-row: 2;
+    text-align: left;
+    margin: 0;
+    max-width: none;
+    font-size: 0.75rem;
+  }
+  .daily-goal .goal-note {
+    grid-column: 2;
+    grid-row: 3;
+    font-size: 0.75rem;
+    margin: 0;
+  }
+  .daily-goal .goal-circle strong {
+    font-size: 1.5rem;
+  }
+  .daily-goal .goal-circle svg {
+    width: 17px;
+    height: 17px;
+  }
+  .daily-goal .goal-circle span {
+    font-size: 0.6875rem;
+  }
+  .welcome-banner > .learning-art {
+    display: none;
+  }
+  .welcome-banner {
+    min-height: 280px;
+  }
+  .welcome-banner > div {
+    max-width: 100%;
+  }
+  .welcome-banner p {
+    font-size: 0.875rem;
+  }
+  .sets-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .home-sets .set-card:last-child {
+    display: block;
+  }
+  .set-cover {
+    height: 155px;
+  }
+  .set-cover-icon {
+    width: 68px;
+    height: 68px;
+  }
+  .set-card-body {
+    padding: 20px 21px 0;
+  }
+  .set-card h3 {
+    font-size: 1.15rem;
+  }
+  .set-card-body > p {
+    min-height: auto;
+  }
+  .set-card-link {
+    font-size: 0.875rem;
+  }
+  .set-meta {
+    font-size: 0.8125rem;
+  }
+  .set-card-progress {
+    font-size: 0.75rem;
+  }
+  .question-card .answer-option {
+    font-size: 1rem;
+  }
+  .word-main {
+    max-width: calc(100% - 105px);
+  }
+  .word-meaning p {
+    line-height: 1.9;
+  }
+  .set-checkboxes .checkbox-label {
+    font-size: 0.875rem;
+  }
+  .auth-content > h1 {
+    font-size: 1.75rem;
+  }
+  .sidebar {
+    overflow-y: auto;
+  }
+  .btn,
+  .text-link {
+    font-size: 0.875rem;
+  }
+}

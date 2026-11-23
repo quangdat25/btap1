@@ -1,0 +1,148 @@
+:root {
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #26382f;
+  background: #f7f9f7;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+  --green: #237552;
+  --green-dark: #1b513c;
+  --muted: #78857e;
+  --line: #e7ece7;
+  --surface: #fff;
+  --radius: 16px;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  min-width: 360px;
+}
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+button,
+a,
+input,
+select,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+button,
+a {
+  touch-action: manipulation;
+}
+button {
+  cursor: pointer;
+}
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button {
+  color: inherit;
+}
+input,
+select,
+textarea {
+  width: 100%;
+  min-width: 0;
+  border: 1px solid #dfe6df;
+  border-radius: 9px;
+  padding: 12px 14px;
+  min-height: 46px;
+  background: #fff;
+  color: #2c3b32;
+  font-size: 0.9rem;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+input::placeholder,
+textarea::placeholder {
+  color: #9aa59e;
+}
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #6ea58c;
+  outline: none;
+  box-shadow: 0 0 0 3px #23755214;
+}
+input[type="checkbox"] {
+  width: 17px;
+  height: 17px;
+  min-height: 17px;
+  padding: 0;
+  accent-color: var(--green);
+  flex-shrink: 0;
+}
+select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='%23697870' stroke-width='1.7'%3E%3Cpath d='m4 6 4 4 4-4'/%3E%3C/svg%3E");
+  background-position: right 12px center;
+  background-repeat: no-repeat;
+  padding-right: 36px;
+}
+textarea {
+  resize: vertical;
+  line-height: 1.7;
+}
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: -0.035em;
+}
+h1 {
+  font-size: 1.8rem;
+  font-weight: 650;
+  line-height: 1.45;
+}
+h2 {
+  font-size: 1.35rem;
+  font-weight: 650;
+  line-height: 1.5;
+}
+h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+p {
+  line-height: 1.8;
+}
+small {
+  font-size: 0.78rem;
+  line-height: 1.6;
+}
+svg {
+  flex-shrink: 0;
+  vertical-align: middle;
+}
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid #79a992;
+  outline-offset: 4px;
+}
+::selection {
+  background: #d7ebbe;
+  color: #173f2c;
+}
