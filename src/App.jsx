@@ -123,7 +123,8 @@ export default function App() {
     }
   };
   const [page, id] = route.split("?")[0].split("/");
-  const context = { user, data, refresh, notify, localMode, logout };
+  const demoMode = import.meta.env.VITE_DEMO_MODE === "true";
+  const context = { user, data, refresh, notify, localMode, logout, demoMode };
   let content;
   if (page === "dashboard") content = <Dashboard />;
   else if (page === "library") content = <Library />;
@@ -267,7 +268,11 @@ export default function App() {
                       onClick={() => setMobile(true)}
                     />
                   </span>
-                  <span>Học một từ mới. Mở thêm một cơ hội.</span>
+                  <span>
+                    {demoMode
+                      ? "Bản demo · Dữ liệu JSON chỉ trong phiên trình duyệt"
+                      : "Học một từ mới. Mở thêm một cơ hội."}
+                  </span>
                 </div>
                 <div className="topbar-right">
                   <span className="streak-pill">

@@ -4,6 +4,22 @@
 
 Giao diện chỉ dùng ReactJS và CSS thuần. Phần lưu trữ, xác thực, phân quyền và chấm bài dùng **Node.js HTTP thuần + SQLite tích hợp trong Node**. Không dùng Next.js, Vue, Angular, Express hoặc framework giao diện khác. ExcelJS xử lý tệp Excel, Nodemailer phục vụ SMTP; Playwright chỉ dùng để kiểm thử.
 
+## Bản demo trên Vercel
+
+Theo yêu cầu, bản triển khai Vercel chạy hoàn toàn trong trình duyệt bằng **ReactJS và dữ liệu JSON trong sessionStorage**. Không gọi API, không cần Node server, database hoặc SMTP trên Vercel. Tài khoản mẫu và dữ liệu khởi tạo được tạo riêng trong mỗi phiên trình duyệt. Tải lại cùng tab giữ dữ liệu; đóng phiên hoặc xóa dữ liệu trình duyệt có thể làm mất dữ liệu demo.
+
+```powershell
+npm run dev:demo
+# Hoặc build bản tĩnh để triển khai:
+npm run build:demo
+```
+
+`vercel.json` đã cấu hình Vite, lệnh `npm run build:demo` và thư mục đầu ra `dist`. Import repository này trên Vercel, để Root Directory là thư mục gốc repository, rồi deploy. Không cần thêm biến môi trường để chạy demo. Cập nhật mã ở nhánh `main` sẽ tạo deployment mới nếu Git integration đang bật.
+
+Đăng nhập bằng các tài khoản mẫu bên dưới. Người học, bài luyện, lịch ôn, từ cá nhân, lịch sử và thao tác quản trị đều thao tác trên JSON của phiên hiện tại. Nhập/xuất Excel xử lý ngay trong trình duyệt; kích hoạt/khôi phục dùng hộp thư thử nghiệm, không gửi thư thật. Đây là bản demo giao diện và nghiệp vụ, không phải cơ chế xác thực/phân quyền bảo mật cho dữ liệu thật. Hãy dùng thông tin và mật khẩu thử nghiệm.
+
+Kiểm tra bản demo bằng `npm run test:demo`: script chỉ phục vụ tệp tĩnh và sẽ báo lỗi nếu ứng dụng gọi bất kỳ đường dẫn `/api/*` nào. Các phần Node.js/SQLite bên dưới vẫn được giữ để dùng khi cần chạy hệ thống thật trên máy bằng `npm run dev`; chúng không chạy trong bản Vercel demo.
+
 ## Chạy trên máy
 
 Nếu lấy mã từ GitHub, mở terminal tại thư mục bạn muốn lưu dự án:

@@ -4,7 +4,7 @@ import { Brand } from "../App";
 import Icon from "../components/Icon";
 
 export default function Auth({ route, onLogin }) {
-  const { notify, localMode } = useApp();
+  const { notify, localMode, demoMode } = useApp();
   const raw = route.split("?")[0];
   const page = ["register", "forgot", "reset", "activate"].includes(raw)
     ? raw
@@ -231,11 +231,17 @@ export default function Auth({ route, onLogin }) {
             <div className="demo-panel">
               <span className="demo-label">
                 <Icon name="code" size={15} />
-                Không gian thử nghiệm trên máy
+                {demoMode
+                  ? "Bản demo · JSON trong phiên trình duyệt"
+                  : "Không gian thử nghiệm trên máy"}
               </span>
               {page === "login" && (
                 <>
-                  <p>Chọn tài khoản mẫu để khám phá các chức năng.</p>
+                  <p>
+                    {demoMode
+                      ? "Chọn tài khoản mẫu. Dữ liệu có thể mất khi đóng phiên; hãy dùng thông tin thử nghiệm."
+                      : "Chọn tài khoản mẫu để khám phá các chức năng."}
+                  </p>
                   <div className="demo-actions">
                     <button
                       onClick={() =>
@@ -306,7 +312,11 @@ export default function Auth({ route, onLogin }) {
       {inbox && (
         <Modal
           title="Hộp thư thử nghiệm"
-          subtitle="Chỉ có ở chế độ phát triển trên máy. Liên kết thật sẽ gửi qua SMTP khi cấu hình production."
+          subtitle={
+            demoMode
+              ? "Liên kết được tạo trong phiên demo này. Không gửi email thật."
+              : "Chỉ có ở chế độ phát triển trên máy. Liên kết thật sẽ gửi qua SMTP khi cấu hình production."
+          }
           onClose={() => setInbox(null)}
         >
           {inbox.length ? (

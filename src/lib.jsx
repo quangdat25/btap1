@@ -7,6 +7,10 @@ export async function api(
   body,
   method = body === undefined ? "GET" : "POST",
 ) {
+  if (import.meta.env.VITE_DEMO_MODE === "true") {
+    const { demoRuntime } = await import("./demo/api.js");
+    return demoRuntime().request(path, body, method);
+  }
   let response;
   try {
     response = await fetch(`/api${path}`, {
@@ -35,6 +39,21 @@ export async function api(
   return data;
 }
 export async function download(path) {
+  if (import.meta.env.VITE_DEMO_MODE === "true") {
+    const { demoRuntime } = await import("./demo/api.js");
+    const { buffer, filename } = await demoRuntime().exportFile(path);
+    const url = URL.createObjectURL(
+      new Blob([buffer], {
+        type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      }),
+    );
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = filename;
+    link.click();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+    return;
+  }
   const response = await fetch(`/api${path}`, { credentials: "same-origin" });
   if (!response.ok)
     throw new Error((await response.json()).message || "Không tải được tệp.");

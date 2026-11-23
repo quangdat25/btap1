@@ -13,14 +13,17 @@
   },
   "scripts": {
     "dev": "node scripts/dev.mjs",
+    "dev:demo": "node scripts/dev.mjs --demo",
     "dev:client": "vite",
     "dev:server": "node --watch server/index.mjs",
     "build": "vite build",
+    "build:demo": "node scripts/build-demo.mjs",
     "lint": "oxlint",
     "preview": "node server/index.mjs",
     "start": "node server/index.mjs",
     "test": "node --test tests/*.test.mjs",
     "test:browser": "npm run build && node scripts/browser-check.mjs",
+    "test:demo": "npm run build:demo && node scripts/demo-browser-check.mjs",
     "backup": "node scripts/backup.mjs"
   },
   "dependencies": {

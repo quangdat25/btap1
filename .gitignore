@@ -30,3 +30,4 @@ test-artifacts/
 .env
 .env.*
 !.env.example
+.vercel/

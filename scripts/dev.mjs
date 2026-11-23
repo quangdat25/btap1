@@ -17,11 +17,16 @@ if (/[#?]/.test(clientDirectory)) {
   clientDirectory = link;
 }
 
+const demo = process.argv.includes("--demo");
 const children = [
-  spawn(process.execPath, ["--watch", "server/index.mjs"], {
-    stdio: "inherit",
-    windowsHide: true,
-  }),
+  ...(!demo
+    ? [
+        spawn(process.execPath, ["--watch", "server/index.mjs"], {
+          stdio: "inherit",
+          windowsHide: true,
+        }),
+      ]
+    : []),
   spawn(
     process.execPath,
     [
@@ -34,6 +39,7 @@ const children = [
       stdio: "inherit",
       windowsHide: true,
       cwd: clientDirectory,
+      env: { ...process.env, ...(demo ? { VITE_DEMO_MODE: "true" } : {}) },
     },
   ),
 ];
